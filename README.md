@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/macetosella/tenpo-api.svg?branch=master)](https://travis-ci.com/macetosella/tenpo-api)
-[![codecov](https://codecov.io/gh/macetosella/tenpo-api/branch/master/graph/badge.svg)](https://codecov.io/gh/macetosella/tenpo-apo)
+[![codecov](https://codecov.io/gh/macetosella/tenpo-api/branch/master/graph/badge.svg)](https://codecov.io/gh/macetosella/tenpo-api)
 
 ![img_2.png](https://tenpo.cl/blog/wp-content/uploads/2021/01/logo-tenpo-white-1.png)
 

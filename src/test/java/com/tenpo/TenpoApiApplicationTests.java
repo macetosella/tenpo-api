@@ -4,10 +4,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TenpoApiApplicationTests {
+class TenpoApiApplicationTests extends TenpoApiApplication{
 
     @Test
-    void contextLoads() {
+    public void tenpoApplication(){
+        TenpoApiApplication.main(new String[]{});
     }
 
 }

@@ -1,13 +1,11 @@
-package com.tenpo.service.implementation;
+package com.tenpo.service;
 
 import com.tenpo.dto.SumDTO;
-import com.tenpo.service.IArithmeticalService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ArithmeticalService implements IArithmeticalService {
+public class ArithmeticalOperationsService {
 
-    @Override
     public int sum(SumDTO sumDTO) {
         return sumDTO.number + sumDTO.otherNumber;
     }

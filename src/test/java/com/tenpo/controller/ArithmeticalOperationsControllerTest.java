@@ -5,7 +5,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.tenpo.service.IArithmeticalService;
+import com.tenpo.filter.RequestResponseLogFilter;
+import com.tenpo.service.ArithmeticalOperationsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,20 +16,22 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-@WebMvcTest(ArithmeticalController.class)
-class ArithmeticalControllerTest {
+@WebMvcTest(ArithmeticalOperationsController.class)
+class ArithmeticalOperationsControllerTest {
 
     @MockBean
-    private IArithmeticalService arithmeticalService;
+    private ArithmeticalOperationsService arithmeticalOperationsService;
+    @MockBean
+    private RequestResponseLogFilter filter;
 
     @Autowired
     private MockMvc mockMvc;
 
-    private ArithmeticalController controller;
+    private ArithmeticalOperationsController controller;
 
     @BeforeEach
     void setUp() {
-        controller = new ArithmeticalController(arithmeticalService);
+        controller = new ArithmeticalOperationsController(arithmeticalOperationsService);
     }
 
     @Test
@@ -38,7 +41,7 @@ class ArithmeticalControllerTest {
         int otherNumber = 3;
         int sumResultExpected = 5;
         String urlTemplate = "/V1/arithmetical/sum/" + number + "/" + otherNumber;
-        when(arithmeticalService.sum(any())).thenReturn(5);
+        when(arithmeticalOperationsService.sum(any())).thenReturn(sumResultExpected);
 
         // Act
         int sumResult = controller.sum(number, otherNumber);

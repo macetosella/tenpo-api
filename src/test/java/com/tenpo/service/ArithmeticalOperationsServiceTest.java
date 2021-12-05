@@ -1,4 +1,4 @@
-package com.tenpo.service.implementation;
+package com.tenpo.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,13 +6,13 @@ import com.tenpo.dto.SumDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class ArithmeticalServiceTest {
+class ArithmeticalOperationsServiceTest {
 
-    private ArithmeticalService service;
+    private ArithmeticalOperationsService service;
 
     @BeforeEach
     void setUp() {
-        service = new ArithmeticalService();
+        service = new ArithmeticalOperationsService();
     }
 
     @Test

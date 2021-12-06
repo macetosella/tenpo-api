@@ -28,7 +28,7 @@ public class ArithmeticalOperationsController {
     public Integer sum(@PathVariable int number, @PathVariable int otherNumber) {
         SumDTO sumDTO = SumDTO.create(number, otherNumber);
         final Integer sumResult = arithmeticalOperationsService.sum(sumDTO);
-        LOG.info("Response : {}", sumResult);
+        LOG.info("[sum] Response : {}", sumResult);
         return sumResult;
 
     }

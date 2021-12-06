@@ -50,14 +50,13 @@ public class AuthenticationController {
             .ok()
             .header(HttpHeaders.SET_COOKIE, cookie.toString())
             .build();
-
     }
 
     @GetMapping(path = "/logout")
     @ResponseBody
     public ResponseEntity<Object> logout() {
         ResponseCookie cookie = ResponseCookie
-            .from("user-id", null)
+            .from("user-id", "")
             .path("/")
             .maxAge(0)
             .build();

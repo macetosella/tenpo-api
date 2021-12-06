@@ -5,7 +5,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.tenpo.filter.RequestResponseLogFilter;
+import com.tenpo.filter.RequestResponseLoggerFilter;
 import com.tenpo.service.ArithmeticalOperationsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,7 @@ class ArithmeticalOperationsControllerTest {
     @MockBean
     private ArithmeticalOperationsService arithmeticalOperationsService;
     @MockBean
-    private RequestResponseLogFilter filter;
+    private RequestResponseLoggerFilter filter;
 
     @Autowired
     private MockMvc mockMvc;

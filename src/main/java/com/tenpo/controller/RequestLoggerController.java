@@ -1,6 +1,6 @@
 package com.tenpo.controller;
 
-import com.tenpo.model.RequestLog;
+import com.tenpo.model.RequestLogger;
 import com.tenpo.service.RequestLoggerService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,9 +26,9 @@ public class RequestLoggerController {
 
     @GetMapping(path = "/history/{page}/{size}")
     @ResponseBody
-    public Page<RequestLog> history(@PathVariable int page, @PathVariable int size) {
-        Page<RequestLog> requestLogPage = requestLoggerService.findAll(page, size);
-        LOG.info("[history] Response : {}", requestLogPage);
-        return requestLogPage;
+    public Page<RequestLogger> history(@PathVariable int page, @PathVariable int size) {
+        Page<RequestLogger> requestLoggerPage = requestLoggerService.findAll(page, size);
+        LOG.info("[history] Response : {}", requestLoggerPage);
+        return requestLoggerPage;
     }
 }

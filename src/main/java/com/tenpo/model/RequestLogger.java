@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class RequestLog {
+public class RequestLogger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,18 +15,18 @@ public class RequestLog {
     public String request;
     public Date date;
 
-    public RequestLog() {
+    public RequestLogger() {
 
     }
 
-    public RequestLog(String request, Date date) {
+    public RequestLogger(String request, Date date) {
         this.request = request;
         this.date = date;
     }
 
     @Override
     public String toString() {
-        return "RequestLog{" +
+        return "RequestLogger{" +
             "requestId=" + requestId +
             ", request='" + request + '\'' +
             ", date=" + date +

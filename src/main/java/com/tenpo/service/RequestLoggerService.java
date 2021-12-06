@@ -1,7 +1,7 @@
 package com.tenpo.service;
 
-import com.tenpo.dto.RequestLogDTO;
-import com.tenpo.model.RequestLog;
+import com.tenpo.dto.RequestLoggerDTO;
+import com.tenpo.model.RequestLogger;
 import com.tenpo.repository.RequestRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,13 +24,13 @@ public class RequestLoggerService {
     }
 
     @Async
-    public void save(RequestLogDTO requestLogDTO) {
-        RequestLog requestLog = new RequestLog(requestLogDTO.request, requestLogDTO.date);
-        RequestLog requestLogSaved = repository.save(requestLog);
-        LOG.info("Saved request : {} ", requestLogSaved);
+    public void save(RequestLoggerDTO requestLoggerDTO) {
+        RequestLogger requestLogger = new RequestLogger(requestLoggerDTO.request, requestLoggerDTO.date);
+        RequestLogger requestLoggerSaved = repository.save(requestLogger);
+        LOG.info("Saved request : {} ", requestLoggerSaved);
     }
 
-    public Page<RequestLog> findAll(int page, int size) {
+    public Page<RequestLogger> findAll(int page, int size) {
         LOG.info("Finding all requests page : {}, size : {} ", page, size);
         Pageable pageable = PageRequest.of(page, size);
         return repository.findAll(pageable);

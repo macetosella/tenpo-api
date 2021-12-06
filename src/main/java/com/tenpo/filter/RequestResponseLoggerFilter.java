@@ -1,6 +1,6 @@
 package com.tenpo.filter;
 
-import com.tenpo.dto.RequestLogDTO;
+import com.tenpo.dto.RequestLoggerDTO;
 import com.tenpo.service.RequestLoggerService;
 import java.io.IOException;
 import java.util.Date;
@@ -17,13 +17,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RequestResponseLogFilter implements Filter {
+public class RequestResponseLoggerFilter implements Filter {
 
-    private static final Logger LOG = LogManager.getLogger(RequestResponseLogFilter.class);
+    private static final Logger LOG = LogManager.getLogger(RequestResponseLoggerFilter.class);
     private final RequestLoggerService requestLoggerService;
 
     @Autowired
-    public RequestResponseLogFilter(RequestLoggerService requestLoggerService) {
+    public RequestResponseLoggerFilter(RequestLoggerService requestLoggerService) {
         this.requestLoggerService = requestLoggerService;
     }
 
@@ -38,9 +38,9 @@ public class RequestResponseLogFilter implements Filter {
 
         StringBuilder requestBuilder = new StringBuilder();
         requestBuilder.append(req.getMethod()).append(":").append(req.getRequestURI());
-        RequestLogDTO requestLogDTO = new RequestLogDTO(requestBuilder.toString(), new Date());
+        RequestLoggerDTO requestLoggerDTO = new RequestLoggerDTO(requestBuilder.toString(), new Date());
 
-        requestLoggerService.save(requestLogDTO);
+        requestLoggerService.save(requestLoggerDTO);
 
         chain.doFilter(request, response);
 

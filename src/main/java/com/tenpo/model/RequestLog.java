@@ -13,16 +13,14 @@ public class RequestLog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long requestId;
     public String request;
-    public int httpStatus;
     public Date date;
 
     public RequestLog() {
 
     }
 
-    public RequestLog(String request, int httpStatus, Date date) {
+    public RequestLog(String request, Date date) {
         this.request = request;
-        this.httpStatus = httpStatus;
         this.date = date;
     }
 
@@ -31,7 +29,6 @@ public class RequestLog {
         return "RequestLog{" +
             "requestId=" + requestId +
             ", request='" + request + '\'' +
-            ", httpStatus=" + httpStatus +
             ", date=" + date +
             '}';
     }

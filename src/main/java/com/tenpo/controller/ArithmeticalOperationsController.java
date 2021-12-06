@@ -25,9 +25,9 @@ public class ArithmeticalOperationsController {
 
     @GetMapping(path = "/sum/{number}/{otherNumber}")
     @ResponseBody
-    public int sum(@PathVariable int number, @PathVariable int otherNumber) {
+    public Integer sum(@PathVariable int number, @PathVariable int otherNumber) {
         SumDTO sumDTO = SumDTO.create(number, otherNumber);
-        final int sumResult = arithmeticalOperationsService.sum(sumDTO);
+        final Integer sumResult = arithmeticalOperationsService.sum(sumDTO);
         LOG.info("Response : {}", sumResult);
         return sumResult;
 

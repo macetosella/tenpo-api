@@ -1,5 +1,7 @@
 package com.tenpo.service;
 
+import static java.lang.Thread.sleep;
+
 import com.tenpo.dto.RequestLogDTO;
 import com.tenpo.model.RequestLog;
 import com.tenpo.repository.RequestRepository;
@@ -22,7 +24,7 @@ public class RequestLogService {
 
     @Async
     public void save(RequestLogDTO requestLogDTO) {
-        RequestLog requestLog = new RequestLog(requestLogDTO.request, requestLogDTO.httpStatus, requestLogDTO.date);
+        RequestLog requestLog = new RequestLog(requestLogDTO.request, requestLogDTO.date);
         RequestLog requestLogSaved = repository.save(requestLog);
         LOG.info("Saved request : {} ", requestLogSaved);
     }

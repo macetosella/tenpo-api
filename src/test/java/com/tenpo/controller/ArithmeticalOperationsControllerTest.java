@@ -44,7 +44,7 @@ class ArithmeticalOperationsControllerTest {
         when(arithmeticalOperationsService.sum(any())).thenReturn(sumResultExpected);
 
         // Act
-        int sumResult = controller.sum(number, otherNumber);
+        Integer sumResult = controller.sum(number, otherNumber);
 
         // Assert
         assertEquals(sumResultExpected, sumResult);

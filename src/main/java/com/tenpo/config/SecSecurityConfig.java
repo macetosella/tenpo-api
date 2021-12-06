@@ -1,0 +1,30 @@
+package com.tenpo.config;
+
+import com.tenpo.filter.SessionFilter;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    public SecSecurityConfig() {
+        super();
+    }
+
+    @Override
+    protected void configure(final HttpSecurity http) throws Exception {
+        http.csrf().disable();
+    }
+
+    @Bean
+    public FilterRegistrationBean<SessionFilter> sessionCustomFilter() {
+        FilterRegistrationBean<SessionFilter> registrationBean = new FilterRegistrationBean<>();
+        registrationBean.setFilter(new SessionFilter());
+        registrationBean.addUrlPatterns("/V1/arithmetical/sum/*");
+        return registrationBean;
+    }
+
+}

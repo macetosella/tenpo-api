@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ArithmeticalOperationsService {
 
-    public int sum(SumDTO sumDTO) {
-        return sumDTO.number + sumDTO.otherNumber;
+    public Integer sum(SumDTO sumDTO) {
+        return Integer.sum(sumDTO.number, sumDTO.otherNumber);
     }
 }

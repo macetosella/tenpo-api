@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -35,14 +36,16 @@ public class RequestResponseLogFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         LOG.info("Request  {} : {}", req.getMethod(), req.getRequestURI());
-        chain.doFilter(request, response);
-        LOG.info("Status Response : {}", res.getStatus());
 
         StringBuilder requestBuilder = new StringBuilder();
         requestBuilder.append(req.getMethod()).append(":").append(req.getRequestURI());
-        RequestLogDTO requestLogDTO = new RequestLogDTO(requestBuilder.toString(), res.getStatus(), new Date());
+        RequestLogDTO requestLogDTO = new RequestLogDTO(requestBuilder.toString(), new Date());
 
         requestLogService.save(requestLogDTO);
+
+        chain.doFilter(request, response);
+
+        LOG.info("Status Response : {}", res.getStatus());
 
     }
 }

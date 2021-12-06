@@ -2,6 +2,7 @@ package com.tenpo.controller;
 
 import com.tenpo.dto.LoginDTO;
 import com.tenpo.dto.UserDTO;
+import com.tenpo.exception.InvalidUserException;
 import com.tenpo.service.AuthenticationService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,7 +32,6 @@ public class AuthenticationController {
     @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Object> login(@RequestBody LoginDTO loginDTO) {
-
         String jwt = authenticationService.authenticate(loginDTO);
 
         ResponseCookie cookie = ResponseCookie

@@ -1,5 +1,6 @@
 package com.tenpo.filter;
 
+import com.tenpo.util.DateUtil;
 import com.tenpo.dto.RequestLoggerDTO;
 import com.tenpo.service.RequestLoggerService;
 import java.io.IOException;
@@ -38,7 +39,7 @@ public class RequestResponseLoggerFilter implements Filter {
 
         StringBuilder requestBuilder = new StringBuilder();
         requestBuilder.append(req.getMethod()).append(":").append(req.getRequestURI());
-        RequestLoggerDTO requestLoggerDTO = new RequestLoggerDTO(requestBuilder.toString(), new Date());
+        RequestLoggerDTO requestLoggerDTO = new RequestLoggerDTO(requestBuilder.toString(), Date.from(DateUtil.now()));
 
         requestLoggerService.save(requestLoggerDTO);
 

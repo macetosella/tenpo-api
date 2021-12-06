@@ -1,17 +1,17 @@
 package com.tenpo.controller;
 
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import java.security.Key;
-import java.util.Date;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
+import com.tenpo.dto.LoginDTO;
+import com.tenpo.dto.UserDTO;
+import com.tenpo.service.AuthenticationService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,30 +20,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/V1/authentication")
 public class AuthenticationController {
 
-
-    public static final String SECRET_KEY = "q3t6w9z$C&F)J@NcQfTjWnZr4u7x!A%D*G-KaPdSgUkXp2s5v8y/B?E(H+MbQeTh";
-    public static final Long EXPIRATION_TIME = 1000L * 60 * 30;
-
     private static final Logger LOG = LogManager.getLogger(AuthenticationController.class);
+    private final AuthenticationService authenticationService;
 
-    @GetMapping(path = "/login")
+    public AuthenticationController(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
+    }
+
+    @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Object> login() {
+    public ResponseEntity<Object> login(@RequestBody LoginDTO loginDTO) {
 
-        Date exp = new Date(System.currentTimeMillis() + EXPIRATION_TIME);
-
-        SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
-        byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(SECRET_KEY);
-        Key signingKey = new SecretKeySpec(apiKeySecretBytes, signatureAlgorithm.getJcaName());
-        String jwt = Jwts.builder().setSubject("Joe").signWith(signatureAlgorithm, signingKey).setExpiration(exp)
-            .compact();
+        String jwt = authenticationService.authenticate(loginDTO);
 
         ResponseCookie cookie = ResponseCookie
             .from("user-id", jwt)
             .httpOnly(true)
             .secure(true)
             .path("/")
-            .maxAge(60000)
+            .maxAge(6000)
             .build();
 
         return ResponseEntity
@@ -65,5 +60,11 @@ public class AuthenticationController {
             .ok()
             .header(HttpHeaders.SET_COOKIE, cookie.toString())
             .build();
+    }
+
+    @PostMapping(path = "/sign-up", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public void singUp(@RequestBody UserDTO userDTO) {
+        authenticationService.userRegistration(userDTO);
     }
 }

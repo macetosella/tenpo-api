@@ -2,15 +2,16 @@ package com.tenpo.controller;
 
 import com.tenpo.dto.LoginDTO;
 import com.tenpo.dto.UserDTO;
-import com.tenpo.exception.InvalidUserException;
 import com.tenpo.service.AuthenticationService;
+import com.tenpo.service.jwt.JWTService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,17 +26,19 @@ public class AuthenticationController {
     private static final Logger LOG = LogManager.getLogger(AuthenticationController.class);
     private final AuthenticationService authenticationService;
 
+    @Autowired
     public AuthenticationController(AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
     }
 
     @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Object> login(@RequestBody LoginDTO loginDTO) {
+    public ResponseEntity<Object> login(@RequestBody @Validated LoginDTO loginDTO) {
+        LOG.info("[login] Request : {}", loginDTO);
         String jwt = authenticationService.authenticate(loginDTO);
 
         ResponseCookie cookie = ResponseCookie
-            .from("user-id", jwt)
+            .from(JWTService.JWT_COOKIE_NAME, jwt)
             .httpOnly(true)
             .secure(true)
             .path("/")
@@ -51,8 +54,9 @@ public class AuthenticationController {
     @GetMapping(path = "/logout")
     @ResponseBody
     public ResponseEntity<Object> logout() {
+        LOG.info("[logout]");
         ResponseCookie cookie = ResponseCookie
-            .from("user-id", "")
+            .from(JWTService.JWT_COOKIE_NAME, "")
             .path("/")
             .maxAge(0)
             .build();
@@ -65,7 +69,8 @@ public class AuthenticationController {
 
     @PostMapping(path = "/sign-up", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public void singUp(@RequestBody UserDTO userDTO) {
+    public void singUp(@RequestBody @Validated UserDTO userDTO) {
+        LOG.info("[singUp] Request : {}", userDTO);
         authenticationService.userRegistration(userDTO);
     }
 }

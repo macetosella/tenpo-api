@@ -7,12 +7,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.tenpo.filter.RequestResponseLoggerFilter;
 import com.tenpo.service.ArithmeticalOperationsService;
+import com.tenpo.service.AuthenticationService;
+import com.tenpo.service.RequestLoggerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -22,6 +25,9 @@ class ArithmeticalOperationsControllerTest {
     @MockBean
     private ArithmeticalOperationsService arithmeticalOperationsService;
     @MockBean
+    private RequestLoggerService requestLoggerService;
+    @MockBean
+    private AuthenticationService authenticationService;
     private RequestResponseLoggerFilter filter;
 
     @Autowired
@@ -31,6 +37,7 @@ class ArithmeticalOperationsControllerTest {
 
     @BeforeEach
     void setUp() {
+        filter = new RequestResponseLoggerFilter(requestLoggerService);
         controller = new ArithmeticalOperationsController(arithmeticalOperationsService);
     }
 
@@ -40,14 +47,15 @@ class ArithmeticalOperationsControllerTest {
         int number = 2;
         int otherNumber = 3;
         int sumResultExpected = 5;
+        ResponseEntity<Integer> sumResultExpectedEntity = ResponseEntity.ok(sumResultExpected);
         String urlTemplate = "/V1/arithmetical/sum/" + number + "/" + otherNumber;
         when(arithmeticalOperationsService.sum(any())).thenReturn(sumResultExpected);
 
         // Act
-        Integer sumResult = controller.sum(number, otherNumber);
+        ResponseEntity<Integer> sumResult = controller.sum(number, otherNumber);
 
         // Assert
-        assertEquals(sumResultExpected, sumResult);
+        assertEquals(sumResultExpectedEntity, sumResult);
         mockMvc.perform(MockMvcRequestBuilders.get(urlTemplate)
             .queryParam(Integer.toString(number), Integer.toString(otherNumber))
             .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());

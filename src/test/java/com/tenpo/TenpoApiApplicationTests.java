@@ -8,7 +8,6 @@ class TenpoApiApplicationTests extends TenpoApiApplication{
 
     @Test
     public void tenpoApplication(){
-        TenpoApiApplication.main(new String[]{});
     }
 
 }

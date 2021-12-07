@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TenpoApiApplicationTests extends TenpoApiApplication{
+class TenpoApiApplicationTests {
 
     @Test
     public void tenpoApplication(){

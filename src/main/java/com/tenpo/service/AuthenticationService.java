@@ -1,5 +1,6 @@
 package com.tenpo.service;
 
+import com.tenpo.dto.response.UserDataResponse;
 import com.tenpo.exception.InvalidTokenException;
 import com.tenpo.exception.InvalidUserException;
 import com.tenpo.util.DateUtil;
@@ -41,10 +42,13 @@ public class AuthenticationService {
         ).orElseThrow(() -> new InvalidUserException("User not found"));
     }
 
-    public void userRegistration(UserDTO userDTO) {
+    public UserDataResponse userRegistration(UserDTO userDTO) {
         UserData user = new UserData(userDTO.userName, userDTO.userNickName, userDTO.password,
             Date.from(DateUtil.now()));
-        userRepository.save(user);
+
+        UserData userData = userRepository.save(user);
+
+        return UserDataResponse.create(userData.userName, userData.userNickName);
     }
 
     public void validateAuth(Cookie[] cookies) {
@@ -59,5 +63,9 @@ public class AuthenticationService {
         } else {
             throw new InvalidTokenException("Cookie not found");
         }
+    }
+
+    public void saveToken() {
+
     }
 }

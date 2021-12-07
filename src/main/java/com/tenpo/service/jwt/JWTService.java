@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class JWTService {
 
     public static final String SECRET_KEY = "q3t6w9z$C&F)J@NcQfTjWnZr4u7x!A%D*G-KaPdSgUkXp2s5v8y/B?E(H+MbQeTh";
-    public static final String JWT_COOKIE_NAME = "user-id";
+    public static final String JWT_COOKIE_NAME = "jwt-token";
     public static final Duration EXPIRATION_TIME = Duration.ofMinutes(30);
 
     public String buildToken(Map<String, Object> claims, Map<String, Object> headers) {

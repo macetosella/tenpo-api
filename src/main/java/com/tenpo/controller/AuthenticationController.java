@@ -2,6 +2,7 @@ package com.tenpo.controller;
 
 import com.tenpo.dto.LoginDTO;
 import com.tenpo.dto.UserDTO;
+import com.tenpo.dto.response.UserDataResponse;
 import com.tenpo.service.AuthenticationService;
 import com.tenpo.service.jwt.JWTService;
 import org.apache.logging.log4j.LogManager;
@@ -69,8 +70,12 @@ public class AuthenticationController {
 
     @PostMapping(path = "/sign-up", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public void singUp(@RequestBody @Validated UserDTO userDTO) {
+    public ResponseEntity<UserDataResponse> singUp(@RequestBody @Validated UserDTO userDTO) {
         LOG.info("[singUp] Request : {}", userDTO);
-        authenticationService.userRegistration(userDTO);
+        UserDataResponse userDataResponse = authenticationService.userRegistration(userDTO);
+        LOG.info("[singUp] Response : {}", userDataResponse);
+
+        return ResponseEntity.ok(userDataResponse);
+
     }
 }

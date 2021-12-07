@@ -1,19 +1,23 @@
 package com.tenpo.service;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 import com.tenpo.dto.LoginDTO;
 import com.tenpo.dto.UserDTO;
 import com.tenpo.dto.response.UserDataResponse;
+import com.tenpo.exception.InvalidTokenException;
 import com.tenpo.exception.InvalidUserException;
 import com.tenpo.model.UserData;
 import com.tenpo.repository.UserRepository;
 import com.tenpo.service.jwt.JWTService;
 import java.util.Date;
 import java.util.Optional;
+import javax.servlet.http.Cookie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -78,9 +82,33 @@ class AuthenticationServiceTest {
 
     @Test
     void validateAuth() {
+        String cookieValueMock = "mockValue";
+        Cookie cookie = new Cookie(JWTService.JWT_COOKIE_NAME, cookieValueMock);
+        Cookie[] cookiesMock = {cookie};
+        doNothing().when(jwtService).verifyToken(any());
+
+        Executable ex = () -> authenticationService.validateAuth(cookiesMock);
+
+        assertDoesNotThrow(ex);
     }
 
     @Test
-    void saveToken() {
+    void validateAuth_session_not_found() {
+        String cookieValueMock = "mockValue";
+        Cookie cookie = new Cookie("bad_session", cookieValueMock);
+        Cookie[] cookiesMock = {cookie};
+
+        Executable ex = () -> authenticationService.validateAuth(cookiesMock);
+
+        assertThrows(InvalidTokenException.class, ex);
+    }
+
+    @Test
+    void validateAuth_cookie_not_found() {
+        Cookie[] cookiesMock = {};
+
+        Executable ex = () -> authenticationService.validateAuth(cookiesMock);
+
+        assertThrows(InvalidTokenException.class, ex);
     }
 }

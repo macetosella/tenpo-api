@@ -64,8 +64,4 @@ public class AuthenticationService {
             throw new InvalidTokenException("Cookie not found");
         }
     }
-
-    public void saveToken() {
-
-    }
 }

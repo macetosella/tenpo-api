@@ -1,9 +1,7 @@
 package com.tenpo;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.test.context.ActiveProfiles;
 
-@ActiveProfiles("test")
 class TenpoApiApplicationTest extends TenpoApiApplication {
 
     @Test

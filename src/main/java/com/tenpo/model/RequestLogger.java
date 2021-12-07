@@ -7,31 +7,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class RequestLog {
+public class RequestLogger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long requestId;
     public String request;
-    public int httpStatus;
     public Date date;
 
-    public RequestLog() {
+    public RequestLogger() {
 
     }
 
-    public RequestLog(String request, int httpStatus, Date date) {
+    public RequestLogger(String request, Date date) {
         this.request = request;
-        this.httpStatus = httpStatus;
         this.date = date;
     }
 
     @Override
     public String toString() {
-        return "RequestLog{" +
+        return "RequestLogger{" +
             "requestId=" + requestId +
             ", request='" + request + '\'' +
-            ", httpStatus=" + httpStatus +
             ", date=" + date +
             '}';
     }

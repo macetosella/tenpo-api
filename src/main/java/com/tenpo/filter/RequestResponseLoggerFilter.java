@@ -1,7 +1,8 @@
 package com.tenpo.filter;
 
-import com.tenpo.dto.RequestLogDTO;
-import com.tenpo.service.RequestLogService;
+import com.tenpo.util.DateUtil;
+import com.tenpo.dto.RequestLoggerDTO;
+import com.tenpo.service.RequestLoggerService;
 import java.io.IOException;
 import java.util.Date;
 import javax.servlet.Filter;
@@ -17,14 +18,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RequestResponseLogFilter implements Filter {
+public class RequestResponseLoggerFilter implements Filter {
 
-    private static final Logger LOG = LogManager.getLogger(RequestResponseLogFilter.class);
-    private final RequestLogService requestLogService;
+    private static final Logger LOG = LogManager.getLogger(RequestResponseLoggerFilter.class);
+    private final RequestLoggerService requestLoggerService;
 
     @Autowired
-    public RequestResponseLogFilter(RequestLogService requestLogService) {
-        this.requestLogService = requestLogService;
+    public RequestResponseLoggerFilter(RequestLoggerService requestLoggerService) {
+        this.requestLoggerService = requestLoggerService;
     }
 
     @Override
@@ -35,14 +36,16 @@ public class RequestResponseLogFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         LOG.info("Request  {} : {}", req.getMethod(), req.getRequestURI());
-        chain.doFilter(request, response);
-        LOG.info("Status Response : {}", res.getStatus());
 
         StringBuilder requestBuilder = new StringBuilder();
         requestBuilder.append(req.getMethod()).append(":").append(req.getRequestURI());
-        RequestLogDTO requestLogDTO = new RequestLogDTO(requestBuilder.toString(), res.getStatus(), new Date());
+        RequestLoggerDTO requestLoggerDTO = new RequestLoggerDTO(requestBuilder.toString(), Date.from(DateUtil.now()));
 
-        requestLogService.save(requestLogDTO);
+        requestLoggerService.save(requestLoggerDTO);
+
+        chain.doFilter(request, response);
+
+        LOG.info("Status Response : {}", res.getStatus());
 
     }
 }

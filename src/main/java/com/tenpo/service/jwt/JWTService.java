@@ -35,7 +35,7 @@ public class JWTService {
             .compact();
     }
 
-    public void verifyToken(String token) {
+    public void verifyToken(String token) throws InvalidTokenException {
         byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(SECRET_KEY);
         Key signingKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS256.getJcaName());
         DefaultJwtSignatureValidator validator = new DefaultJwtSignatureValidator(SignatureAlgorithm.HS256,

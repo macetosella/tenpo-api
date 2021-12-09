@@ -12,6 +12,7 @@ import com.tenpo.dto.response.UserDataResponse;
 import com.tenpo.service.ArithmeticalOperationsService;
 import com.tenpo.service.AuthenticationService;
 import com.tenpo.service.RequestLoggerService;
+import java.net.URI;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,9 +65,9 @@ class AuthenticationControllerTest {
     void singUp() throws Exception {
         String userMock = "pepe";
         String urlTemplate = "/V1/authentication/sign-up";
-        UserDTO userDTO = new UserDTO(userMock, userMock, userMock);
-        UserDataResponse userDataResponseExpected = UserDataResponse.create(userMock, userMock);
-        ResponseEntity<UserDataResponse> userDataResponseExpectedEntity = ResponseEntity.ok(userDataResponseExpected);
+        UserDTO userDTO = new UserDTO(userMock, userMock);
+        UserDataResponse userDataResponseExpected = UserDataResponse.create(userMock);
+        ResponseEntity<UserDataResponse> userDataResponseExpectedEntity = ResponseEntity.created(new URI("/login")).body(userDataResponseExpected);
         when(authenticationService.userRegistration(userDTO)).thenReturn(userDataResponseExpected);
 
         ResponseEntity<UserDataResponse> userDataResponse = controller.singUp(userDTO);
@@ -74,6 +75,6 @@ class AuthenticationControllerTest {
         assertEquals(userDataResponseExpectedEntity, userDataResponse);
         mockMvc.perform(MockMvcRequestBuilders.post(urlTemplate)
             .content(new ObjectMapper().writeValueAsString((userDTO)))
-            .contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(status().isOk());
+            .contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(status().isCreated());
     }
 }

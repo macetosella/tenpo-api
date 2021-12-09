@@ -5,6 +5,8 @@ import com.tenpo.dto.UserDTO;
 import com.tenpo.dto.response.UserDataResponse;
 import com.tenpo.service.AuthenticationService;
 import com.tenpo.service.jwt.JWTService;
+import java.net.URI;
+import java.util.concurrent.ExecutionException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +36,7 @@ public class AuthenticationController {
 
     @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<Object> login(@RequestBody @Validated LoginDTO loginDTO) {
+    public ResponseEntity<Object> login(@RequestBody @Validated LoginDTO loginDTO) throws ExecutionException {
         LOG.info("[login] Request : {}", loginDTO);
         String jwt = authenticationService.authenticate(loginDTO);
 
@@ -75,7 +77,7 @@ public class AuthenticationController {
         UserDataResponse userDataResponse = authenticationService.userRegistration(userDTO);
         LOG.info("[singUp] Response : {}", userDataResponse);
 
-        return ResponseEntity.ok(userDataResponse);
+        return ResponseEntity.created(URI.create("/login")).body(userDataResponse);
 
     }
 }

@@ -1,6 +1,9 @@
 package com.tenpo.model;
 
+import com.google.common.hash.Hashing;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,8 +15,8 @@ public class UserData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long userId;
+    @Column(unique = true)
     public String userName;
-    public String userNickName;
     public String password;
     public Date created;
 
@@ -21,11 +24,14 @@ public class UserData {
 
     }
 
-    public UserData(String userName, String userNickName, String password, Date created) {
+    public UserData(String userName, String password, Date created) {
         this.userName = userName;
-        this.userNickName = userNickName;
-        this.password = password;
+        this.password = hashPassword(password);
         this.created = created;
+    }
+
+    public static String hashPassword(String password) {
+        return Hashing.sha512().hashString(password, StandardCharsets.UTF_8).toString();
     }
 
     @Override
@@ -33,7 +39,6 @@ public class UserData {
         return "User{" +
             "userId=" + userId +
             ", userName='" + userName + '\'' +
-            ", userNickName='" + userNickName + '\'' +
             ", password='" + password + '\'' +
             ", created=" + created +
             '}';

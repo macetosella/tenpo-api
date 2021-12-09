@@ -1,17 +1,18 @@
 package com.tenpo.service;
 
+import com.tenpo.dto.LoginDTO;
+import com.tenpo.dto.UserDTO;
 import com.tenpo.dto.response.UserDataResponse;
 import com.tenpo.exception.InvalidTokenException;
 import com.tenpo.exception.InvalidUserException;
-import com.tenpo.util.DateUtil;
-import com.tenpo.dto.LoginDTO;
-import com.tenpo.dto.UserDTO;
 import com.tenpo.model.UserData;
 import com.tenpo.repository.UserRepository;
 import com.tenpo.service.jwt.JWTService;
+import com.tenpo.util.DateUtil;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import javax.servlet.http.Cookie;
 import org.springframework.stereotype.Service;
@@ -28,8 +29,14 @@ public class AuthenticationService {
     }
 
     public String authenticate(LoginDTO loginDTO) {
-        Optional<UserData> userData = userRepository.findByUserNickNameAndPassword(loginDTO.userName,
-            loginDTO.password);
+        Optional<UserData> userData = userRepository.findByUserName(loginDTO.userName);
+
+        userData.ifPresent(user -> {
+            if (!Objects.equals(UserData.hashPassword(loginDTO.password), user.password)) {
+                throw new RuntimeException();
+            }
+        });
+
         Date expirationDate = Date.from(DateUtil.now().plus(JWTService.EXPIRATION_TIME));
 
         return userData.map(user -> {
@@ -43,12 +50,12 @@ public class AuthenticationService {
     }
 
     public UserDataResponse userRegistration(UserDTO userDTO) {
-        UserData user = new UserData(userDTO.userName, userDTO.userNickName, userDTO.password,
+        UserData user = new UserData(userDTO.userName, userDTO.password,
             Date.from(DateUtil.now()));
 
         UserData userData = userRepository.save(user);
 
-        return UserDataResponse.create(userData.userName, userData.userNickName);
+        return UserDataResponse.create(userData.userName);
     }
 
     public void validateAuth(Cookie[] cookies) {

@@ -17,6 +17,7 @@ import com.tenpo.repository.UserRepository;
 import com.tenpo.service.jwt.JWTService;
 import java.util.Date;
 import java.util.Optional;
+import java.util.concurrent.ExecutionException;
 import javax.servlet.http.Cookie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,13 +42,13 @@ class AuthenticationServiceTest {
     }
 
     @Test
-    void authenticate() {
+    void authenticate() throws ExecutionException {
         String mockUser = "pepe";
         String jwtExpected = "jwt.jwt.jwt";
         LoginDTO loginDTO = new LoginDTO(mockUser, mockUser);
-        UserData userData = new UserData(mockUser, mockUser, mockUser, new Date());
+        UserData userData = new UserData(mockUser, mockUser, new Date());
         Optional<UserData> optionalUserData = Optional.of(userData);
-        when(userRepository.findByUserNickNameAndPassword(mockUser, mockUser)).thenReturn(optionalUserData);
+        when(userRepository.findByUserName(mockUser)).thenReturn(optionalUserData);
         when(jwtService.buildToken(any(), any())).thenReturn(jwtExpected);
 
         String jwt = authenticationService.authenticate(loginDTO);
@@ -59,7 +60,7 @@ class AuthenticationServiceTest {
     void authenticate_user_not_signup() {
         String mockUser = "pepe";
         LoginDTO loginDTO = new LoginDTO(mockUser, mockUser);
-        when(userRepository.findByUserNickNameAndPassword(mockUser, mockUser)).thenReturn(Optional.empty());
+        when(userRepository.findByUserName(mockUser)).thenReturn(Optional.empty());
 
         Executable ex = () -> authenticationService.authenticate(loginDTO);
 
@@ -69,15 +70,15 @@ class AuthenticationServiceTest {
     @Test
     void userRegistration() {
         String mockUser = "pepe";
-        UserDTO userDTO = new UserDTO(mockUser, mockUser, mockUser);
-        UserData userData = new UserData(mockUser, mockUser, mockUser, new Date());
+        UserDTO userDTO = new UserDTO(mockUser, mockUser);
+        UserData userData = new UserData(mockUser, mockUser, new Date());
         when(userRepository.save(any())).thenReturn(userData);
-        UserDataResponse userDataResponseExpected = UserDataResponse.create(mockUser, mockUser);
+        UserDataResponse userDataResponseExpected = UserDataResponse.create(mockUser);
 
         UserDataResponse userDataResponse = authenticationService.userRegistration(userDTO);
 
         assertEquals(userDataResponseExpected.userName, userDataResponse.userName);
-        assertEquals(userDataResponseExpected.userNickName, userDataResponse.userNickName);
+        assertEquals(userDataResponseExpected.userName, userDataResponse.userName);
     }
 
     @Test

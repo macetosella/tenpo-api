@@ -5,6 +5,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.google.common.hash.Hashing;
 import com.tenpo.filter.RequestResponseLoggerFilter;
 import com.tenpo.service.ArithmeticalOperationsService;
 import com.tenpo.service.AuthenticationService;
@@ -29,11 +30,10 @@ class ArithmeticalOperationsControllerTest {
     @MockBean
     private AuthenticationService authenticationService;
     private RequestResponseLoggerFilter filter;
-
     @Autowired
     private MockMvc mockMvc;
-
     private ArithmeticalOperationsController controller;
+
 
     @BeforeEach
     void setUp() {
@@ -59,6 +59,13 @@ class ArithmeticalOperationsControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get(urlTemplate)
             .queryParam(Integer.toString(number), Integer.toString(otherNumber))
             .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+    }
+
+    @Test
+    void prueba() {
+        String user = Hashing.sha512().hashString("PEPE").toString();
+        String user2 = Hashing.sha512().hashString("PEPE").toString();
+        assertEquals(user, user2);
     }
 
 }

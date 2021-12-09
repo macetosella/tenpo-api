@@ -1,11 +1,43 @@
 [![Build Status](https://travis-ci.com/macetosella/tenpo-api.svg?branch=master)](https://travis-ci.com/macetosella/tenpo-api)
 [![codecov](https://codecov.io/gh/macetosella/tenpo-api/branch/master/graph/badge.svg)](https://codecov.io/gh/macetosella/tenpo-api)
 
-![img_2.png](https://tenpo.cl/blog/wp-content/uploads/2021/01/logo-tenpo-white-1.png)
+![img_2.png](https://krealo.pe/wp-content/uploads/2020/12/Tengo-original-pa%CC%81gina-web--e1609189663257.png)
 
 # Desafio Tenpo
 
-## Requerimientos:
+## Tabla de Contenidos
+
+- [Requerimientos](#requerimientos)
+   - [Tecnologias usadas](#tecnologias-usadas)
+   - [Comentarios](#comentarios)
+- [Setup](#setup)
+   - [Instrucciones](#instrucciones)
+   - [Uso](#uso)
+   - [API Url](#api)
+   - [Servicios](#servicios)
+      - [Signup](#ignup)
+      - [Login](#login)
+      - [Logout](#logut)
+      - [Sum](#sum)
+      - [History](#history)
+- [Test](#test)
+   - [Automaticos](#automaticos)
+   - [Cobertura](#cobertura)
+   
+### Tecnologias usadas
+- [JDK 11](https://www.oracle.com/index.html)
+- [Spring Boot](https://projects.spring.io/spring-boot/)
+- [Spring JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)
+- [Docker](https://www.docker.com/)
+- [Postgre SQL](https://www.postgresql.org/)
+- [Log4J2](http://www.slf4j.org/)
+- [jUnit](http://junit.org/junit5/)
+- [Mockito](http://site.mockito.org/)
+- [Gradle](https://gradle.org/)
+- [Jacoco](https://www.jacoco.org/jacoco/trunk/index.html)
+- [Travis](https://travis-ci.com/)
+
+### Requerimientos:
 
 1. Debes desarrollar una API REST en Spring Boot con las siguientes funcionalidades:
    * Sign up usuarios.
@@ -24,3 +56,35 @@
 
 
 4. Tu código debe estar disponible en un repositorio público, junto con las instrucciones de cómo desplegar el servicio y cómo utilizarlo.
+
+### Comentarios
+
+### Setup
+
+#### Instrucciones
+
+#### Uso
+
+#### API Url
+
+### Servicios
+
+#### Signup
+
+#### Login
+
+#### Logout 
+
+#### Sum
+
+#### History
+
+### Test
+
+#### Unitarios
+
+Para la ejecucion de los test unitarios utilice jUnit.
+
+#### Cobertura
+
+Para la cobertura de código se utilizó la herramienta Codecov, muestra un 93% de coverage.

@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 
 import com.tenpo.api.dto.LoginDTO;
 import com.tenpo.api.dto.UserDTO;
+import com.tenpo.api.exception.InvalidPasswordException;
 import com.tenpo.api.exception.InvalidTokenException;
 import com.tenpo.api.exception.InvalidUserException;
 import com.tenpo.api.model.UserData;
@@ -65,6 +66,20 @@ class AuthenticationServiceTest {
         Executable ex = () -> authenticationService.authenticate(loginDTO);
 
         assertThrows(InvalidUserException.class, ex);
+    }
+
+    @Test
+    void authenticate_user_invalid_password() {
+        String mockUser = "pepe";
+        String mockInvalidPassword = "pepe2";
+        LoginDTO loginDTO = new LoginDTO(mockUser, mockUser);
+        UserData userData = new UserData(mockUser, mockInvalidPassword, new Date());
+        Optional<UserData> optionalUserData = Optional.of(userData);
+        when(userRepository.findByUserName(mockUser)).thenReturn(optionalUserData);
+
+        Executable ex = () -> authenticationService.authenticate(loginDTO);
+
+        assertThrows(InvalidPasswordException.class, ex);
     }
 
     @Test

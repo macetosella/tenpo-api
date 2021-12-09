@@ -1,0 +1,115 @@
+[INFO ] 2021-12-09 08:38:32.736 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98340 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG] 2021-12-09 08:38:32.738 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO ] 2021-12-09 08:38:32.738 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:38:36.901 [main] TenpoApiApplication - Started TenpoApiApplication in 4.49 seconds (JVM running for 5.277)
+[INFO ] 2021-12-09 08:39:45.463 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98372 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG] 2021-12-09 08:39:45.466 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO ] 2021-12-09 08:39:45.466 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:39:49.297 [main] TenpoApiApplication - Started TenpoApiApplication in 4.095 seconds (JVM running for 5.016)
+[INFO ] 2021-12-09 08:40:33.128 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98416 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG] 2021-12-09 08:40:33.131 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO ] 2021-12-09 08:40:33.131 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:40:37.017 [main] TenpoApiApplication - Started TenpoApiApplication in 4.128 seconds (JVM running for 4.718)
+[INFO ] 2021-12-09 08:43:59.747 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98476 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG] 2021-12-09 08:43:59.749 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO ] 2021-12-09 08:43:59.750 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:44:03.418 [main] TenpoApiApplication - Started TenpoApiApplication in 3.913 seconds (JVM running for 4.653)
+[INFO ] 2021-12-09 08:45:29.170 [http-nio-8080-exec-2] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO ] 2021-12-09 08:45:29.296 [http-nio-8080-exec-2] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO ] 2021-12-09 08:45:29.300 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 05:45:29 ART 2021} 
+[INFO ] 2021-12-09 08:45:29.313 [http-nio-8080-exec-2] AuthenticationController - [singUp] Response : UserDataResponse{userName='holoa2'}
+[INFO ] 2021-12-09 08:45:29.364 [http-nio-8080-exec-2] RequestResponseLoggerFilter - Status Response : 201
+[INFO] 2021-12-09 08:45:52.203 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98524 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG] 2021-12-09 08:45:52.205 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO] 2021-12-09 08:45:52.206 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO] 2021-12-09 08:45:56.028 [main] TenpoApiApplication - Started TenpoApiApplication in 4.07 seconds (JVM running for 4.831)
+[INFO] 2021-12-09 08:46:03.599 [http-nio-8080-exec-2] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO] 2021-12-09 08:46:03.682 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 05:46:03 ART 2021} 
+[INFO] 2021-12-09 08:46:03.749 [http-nio-8080-exec-2] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO] 2021-12-09 08:46:03.757 [http-nio-8080-exec-2] AuthenticationController - [singUp] Response : UserDataResponse{userName='holoa2'}
+[INFO] 2021-12-09 08:46:03.784 [http-nio-8080-exec-2] RequestResponseLoggerFilter - Status Response : 201
+[INFO] 2021-12-09 08:46:06.950 [http-nio-8080-exec-3] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO] 2021-12-09 08:46:06.951 [http-nio-8080-exec-3] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO] 2021-12-09 08:46:06.954 [task-2] RequestLoggerService - Saved request : RequestLogger{requestId=3, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 05:46:06 ART 2021} 
+[INFO] 2021-12-09 08:46:06.982 [http-nio-8080-exec-3] RequestResponseLoggerFilter - Status Response : 409
+[INFO   ] 2021-12-09 08:46:53.323 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98555 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG  ] 2021-12-09 08:46:53.326 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO   ] 2021-12-09 08:46:53.326 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO   ] 2021-12-09 08:46:57.003 [main] TenpoApiApplication - Started TenpoApiApplication in 3.927 seconds (JVM running for 4.567)
+[INFO   ] 2021-12-09 08:47:05.194 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98572 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG  ] 2021-12-09 08:47:05.197 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO   ] 2021-12-09 08:47:05.197 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO   ] 2021-12-09 08:47:08.089 [main] TenpoApiApplication - Started TenpoApiApplication in 3.12 seconds (JVM running for 3.722)
+[INFO   ] 2021-12-09 08:47:12.872 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO   ] 2021-12-09 08:47:12.982 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 05:47:12 ART 2021} 
+[INFO   ] 2021-12-09 08:47:13.003 [http-nio-8080-exec-1] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO   ] 2021-12-09 08:47:13.018 [http-nio-8080-exec-1] AuthenticationController - [singUp] Response : UserDataResponse{userName='holoa2'}
+[INFO   ] 2021-12-09 08:47:13.073 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Status Response : 201
+Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98599 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+Running with Spring Boot v2.6.1, Spring v5.3.13
+The following profiles are active: dev
+Started TenpoApiApplication in 3.59 seconds (JVM running for 4.38)
+Request  POST : /V1/authentication/sign-up
+Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 05:47:54 ART 2021} 
+[singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[singUp] Response : UserDataResponse{userName='holoa2'}
+Status Response : 201
+[INFO   ] 2021-12-09 08:49:23.066 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98654 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG  ] 2021-12-09 08:49:23.069 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO   ] 2021-12-09 08:49:23.069 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO   ] 2021-12-09 08:49:26.230 [main] TenpoApiApplication - Started TenpoApiApplication in 3.387 seconds (JVM running for 4.001)
+[INFO   ] 2021-12-09 08:50:03.592 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98683 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[DEBUG  ] 2021-12-09 08:50:03.608 [main] TenpoApiApplication - Running with Spring Boot v2.6.1, Spring v5.3.13
+[INFO   ] 2021-12-09 08:50:03.608 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO   ] 2021-12-09 08:50:07.207 [main] TenpoApiApplication - Started TenpoApiApplication in 3.866 seconds (JVM running for 4.525)
+[INFO   ] 2021-12-09 08:50:13.471 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98704 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO   ] 2021-12-09 08:50:13.474 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO   ] 2021-12-09 08:50:16.354 [main] TenpoApiApplication - Started TenpoApiApplication in 3.111 seconds (JVM running for 3.779)
+[INFO ] 2021-12-09 08:50:42.160 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98728 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 08:50:42.163 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:50:45.028 [main] TenpoApiApplication - Started TenpoApiApplication in 3.096 seconds (JVM running for 3.841)
+[INFO ] 2021-12-09 08:50:50.225 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO ] 2021-12-09 08:50:50.291 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 05:50:50 ART 2021} 
+[INFO ] 2021-12-09 08:50:50.332 [http-nio-8080-exec-1] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO ] 2021-12-09 08:50:50.343 [http-nio-8080-exec-1] AuthenticationController - [singUp] Response : UserDataResponse{userName='holoa2'}
+[INFO ] 2021-12-09 08:50:50.367 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Status Response : 201
+[INFO ] 2021-12-09 08:53:45.429 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98827 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 08:53:45.433 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:53:48.558 [main] TenpoApiApplication - Started TenpoApiApplication in 3.386 seconds (JVM running for 4.04)
+[INFO ] 2021-12-09 08:54:52.088 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98869 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 08:54:52.091 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:54:55.487 [main] TenpoApiApplication - Started TenpoApiApplication in 3.653 seconds (JVM running for 4.441)
+[INFO ] 2021-12-09 08:55:06.316 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98888 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 08:55:06.319 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:55:09.209 [main] TenpoApiApplication - Started TenpoApiApplication in 3.11 seconds (JVM running for 3.765)
+[INFO ] 2021-12-09 08:56:02.825 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98916 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 08:56:02.828 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:56:06.008 [main] TenpoApiApplication - Started TenpoApiApplication in 3.423 seconds (JVM running for 4.265)
+[INFO ] 2021-12-09 08:58:49.462 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 98995 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 08:58:49.465 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:58:52.767 [main] TenpoApiApplication - Started TenpoApiApplication in 3.562 seconds (JVM running for 4.214)
+[INFO ] 2021-12-09 08:59:21.677 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99013 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 08:59:21.679 [main] TenpoApiApplication - The following profiles are active: dev
+[INFO ] 2021-12-09 08:59:24.576 [main] TenpoApiApplication - Started TenpoApiApplication in 3.126 seconds (JVM running for 3.716)
+[INFO ] 2021-12-09 09:02:25.295 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99089 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:02:25.299 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:02:28.515 [main] TenpoApiApplication - Started TenpoApiApplication in 3.449 seconds (JVM running for 4.017)
+[INFO ] 2021-12-09 09:12:32.066 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99256 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:12:32.079 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:12:35.912 [main] TenpoApiApplication - Started TenpoApiApplication in 4.1 seconds (JVM running for 4.706)
+[INFO ] 2021-12-09 09:12:39.256 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO ] 2021-12-09 09:12:39.346 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 06:12:39 ART 2021} 
+[INFO ] 2021-12-09 09:12:39.377 [http-nio-8080-exec-1] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO ] 2021-12-09 09:12:39.393 [http-nio-8080-exec-1] AuthenticationController - [singUp] Response : UserDataResponse{userName='holoa2'}
+[INFO ] 2021-12-09 09:12:39.423 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Status Response : 201
+[INFO ] 2021-12-09 09:13:23.243 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99279 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:13:23.250 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:13:26.869 [main] TenpoApiApplication - Started TenpoApiApplication in 3.878 seconds (JVM running for 4.448)
+[INFO ] 2021-12-09 09:13:32.341 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO ] 2021-12-09 09:13:32.462 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 06:13:32 ART 2021} 
+[INFO ] 2021-12-09 09:13:32.548 [http-nio-8080-exec-1] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO ] 2021-12-09 09:13:32.560 [http-nio-8080-exec-1] AuthenticationController - [singUp] Response : UserDataResponse{userName='holoa2'}
+[INFO ] 2021-12-09 09:13:32.614 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Status Response : 201
+[INFO ] 2021-12-09 09:14:00.226 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99290 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:14:00.230 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:14:03.758 [main] TenpoApiApplication - Started TenpoApiApplication in 3.765 seconds (JVM running for 4.356)

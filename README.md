@@ -58,6 +58,7 @@
 4. Tu código debe estar disponible en un repositorio público, junto con las instrucciones de cómo desplegar el servicio y cómo utilizarlo.
 
 ### Comentarios
+Probablemente la solución para el login/signup/logout no sea la mejor, se decidió ir por el camino de utilizar cookies/sessions ya que no estoy del todo familiarizado con `sprint securty` y la idea es entregar una solución funcional en un corto plazo. Con lo cual queda como deuda técnica.
 
 ### Setup
 

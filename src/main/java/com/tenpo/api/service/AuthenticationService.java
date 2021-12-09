@@ -4,6 +4,7 @@ import com.tenpo.api.dto.LoginDTO;
 import com.tenpo.api.dto.UserDTO;
 import com.tenpo.api.exception.InvalidTokenException;
 import com.tenpo.api.exception.InvalidUserException;
+import com.tenpo.api.exception.InvalidPasswordException;
 import com.tenpo.api.model.UserData;
 import com.tenpo.api.repository.UserRepository;
 import com.tenpo.api.util.DateUtil;
@@ -33,7 +34,7 @@ public class AuthenticationService {
 
         userData.ifPresent(user -> {
             if (!Objects.equals(UserData.hashPassword(loginDTO.password), user.password)) {
-                throw new RuntimeException();
+                throw new InvalidPasswordException("Invalid password");
             }
         });
 

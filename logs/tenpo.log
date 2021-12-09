@@ -113,3 +113,128 @@ Status Response : 201
 [INFO ] 2021-12-09 09:14:00.226 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99290 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
 [INFO ] 2021-12-09 09:14:00.230 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
 [INFO ] 2021-12-09 09:14:03.758 [main] TenpoApiApplication - Started TenpoApiApplication in 3.765 seconds (JVM running for 4.356)
+[INFO ] 2021-12-09 09:25:00.248 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99637 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:25:00.251 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:26:56.677 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99678 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:26:56.681 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:27:43.126 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99717 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:27:43.129 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:29:19.581 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99880 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:29:19.596 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:29:23.308 [main] TenpoApiApplication - Started TenpoApiApplication in 3.961 seconds (JVM running for 4.564)
+[INFO ] 2021-12-09 09:29:27.607 [http-nio-8080-exec-2] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO ] 2021-12-09 09:29:27.797 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 06:29:27 ART 2021} 
+[INFO ] 2021-12-09 09:29:27.836 [http-nio-8080-exec-2] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO ] 2021-12-09 09:29:27.853 [http-nio-8080-exec-2] AuthenticationController - [singUp] Response : UserDataResponse{userName='holoa2'}
+[INFO ] 2021-12-09 09:29:27.887 [http-nio-8080-exec-2] RequestResponseLoggerFilter - Status Response : 201
+[INFO ] 2021-12-09 09:29:44.705 [http-nio-8080-exec-3] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:29:44.708 [task-2] RequestLoggerService - Saved request : RequestLogger{requestId=3, request='POST:/V1/authentication/login', date=Thu Dec 09 06:29:44 ART 2021} 
+[INFO ] 2021-12-09 09:29:44.710 [http-nio-8080-exec-3] AuthenticationController - [login] Request : 1
+[INFO ] 2021-12-09 09:29:44.876 [http-nio-8080-exec-3] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:30:04.482 [http-nio-8080-exec-4] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:30:04.483 [http-nio-8080-exec-4] AuthenticationController - [login] Request : 1
+[INFO ] 2021-12-09 09:30:04.484 [task-3] RequestLoggerService - Saved request : RequestLogger{requestId=4, request='POST:/V1/authentication/login', date=Thu Dec 09 06:30:04 ART 2021} 
+[INFO ] 2021-12-09 09:30:04.486 [http-nio-8080-exec-4] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:30:20.554 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99929 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:30:20.557 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:30:24.301 [main] TenpoApiApplication - Started TenpoApiApplication in 4.062 seconds (JVM running for 4.794)
+[INFO ] 2021-12-09 09:30:27.100 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:30:27.183 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/login', date=Thu Dec 09 06:30:27 ART 2021} 
+[INFO ] 2021-12-09 09:30:27.219 [http-nio-8080-exec-1] AuthenticationController - [login] Request : 1
+[INFO ] 2021-12-09 09:30:27.328 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Status Response : 401
+[INFO ] 2021-12-09 09:30:54.763 [http-nio-8080-exec-3] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:30:54.765 [http-nio-8080-exec-3] AuthenticationController - [login] Request : 1
+[INFO ] 2021-12-09 09:30:54.766 [task-2] RequestLoggerService - Saved request : RequestLogger{requestId=2, request='POST:/V1/authentication/login', date=Thu Dec 09 06:30:54 ART 2021} 
+[INFO ] 2021-12-09 09:30:54.768 [http-nio-8080-exec-3] RequestResponseLoggerFilter - Status Response : 401
+[INFO ] 2021-12-09 09:31:09.832 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 99950 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:31:09.835 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:31:13.483 [main] TenpoApiApplication - Started TenpoApiApplication in 3.978 seconds (JVM running for 4.804)
+[INFO ] 2021-12-09 09:31:16.628 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:31:16.711 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/login', date=Thu Dec 09 06:31:16 ART 2021} 
+[INFO ] 2021-12-09 09:31:16.741 [http-nio-8080-exec-1] AuthenticationController - [login] Request : 9
+[INFO ] 2021-12-09 09:31:16.850 [http-nio-8080-exec-1] RequestResponseLoggerFilter - Status Response : 401
+[INFO ] 2021-12-09 09:48:53.313 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 475 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:48:53.317 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:49:29.394 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 496 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:49:29.399 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:49:34.324 [main] TenpoApiApplication - Started TenpoApiApplication in 5.174 seconds (JVM running for 5.76)
+[INFO ] 2021-12-09 09:52:10.570 [http-nio-8080-exec-2] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:52:10.659 [task-1] RequestLoggerService - Saved request : RequestLogger{requestId=1, request='POST:/V1/authentication/login', date=Thu Dec 09 06:52:10 ART 2021} 
+[INFO ] 2021-12-09 09:52:10.687 [http-nio-8080-exec-2] AuthenticationController - [login] Request : LoginDTO{userName='holoa2', password='hola2'}
+[INFO ] 2021-12-09 09:52:10.815 [http-nio-8080-exec-2] RequestResponseLoggerFilter - Status Response : 401
+[INFO ] 2021-12-09 09:52:19.552 [http-nio-8080-exec-3] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO ] 2021-12-09 09:52:19.554 [task-2] RequestLoggerService - Saved request : RequestLogger{requestId=2, request='POST:/V1/authentication/sign-up', date=Thu Dec 09 06:52:19 ART 2021} 
+[INFO ] 2021-12-09 09:52:19.555 [http-nio-8080-exec-3] AuthenticationController - [singUp] Request : UserDTO{userName='holoa2', password='hola2'}
+[INFO ] 2021-12-09 09:52:19.565 [http-nio-8080-exec-3] AuthenticationController - [singUp] Response : UserDataResponse{userName='holoa2'}
+[INFO ] 2021-12-09 09:52:19.571 [http-nio-8080-exec-3] RequestResponseLoggerFilter - Status Response : 201
+[INFO ] 2021-12-09 09:52:32.382 [http-nio-8080-exec-4] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:52:32.384 [http-nio-8080-exec-4] AuthenticationController - [login] Request : LoginDTO{userName='holoa2', password='hola2'}
+[INFO ] 2021-12-09 09:52:32.385 [task-3] RequestLoggerService - Saved request : RequestLogger{requestId=4, request='POST:/V1/authentication/login', date=Thu Dec 09 06:52:32 ART 2021} 
+[INFO ] 2021-12-09 09:52:32.466 [http-nio-8080-exec-4] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:52:35.899 [http-nio-8080-exec-5] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:52:35.901 [http-nio-8080-exec-5] AuthenticationController - [login] Request : LoginDTO{userName='holoa2', password='holoa2'}
+[INFO ] 2021-12-09 09:52:35.901 [task-4] RequestLoggerService - Saved request : RequestLogger{requestId=5, request='POST:/V1/authentication/login', date=Thu Dec 09 06:52:35 ART 2021} 
+[INFO ] 2021-12-09 09:52:35.903 [http-nio-8080-exec-5] RequestResponseLoggerFilter - Status Response : 401
+[INFO ] 2021-12-09 09:53:57.576 [main] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 574 (/Users/matiacetosel/tenpo-api/build/classes/java/main started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:53:57.581 [main] TenpoApiApplication - The following profiles are active: ${ACTIVE_PROFILE}
+[INFO ] 2021-12-09 09:54:02.948 [main] TenpoApiApplication - Started TenpoApiApplication in 5.826 seconds (JVM running for 6.823)
+[INFO ] 2021-12-09 09:54:29.743 [Test worker] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 588 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:54:29.752 [Test worker] TenpoApiApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:54:39.815 [Test worker] ArithmeticalOperationsControllerTest - Starting ArithmeticalOperationsControllerTest using Java 11.0.8 on AR0FVFCG16YL415 with PID 588 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:54:39.816 [Test worker] ArithmeticalOperationsControllerTest - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:54:42.130 [Test worker] ArithmeticalOperationsControllerTest - Started ArithmeticalOperationsControllerTest in 2.374 seconds (JVM running for 16.755)
+[INFO ] 2021-12-09 09:54:42.256 [Test worker] ArithmeticalOperationsController - [sum] Request : number: 2, otherNumber: 3
+[INFO ] 2021-12-09 09:54:42.264 [Test worker] ArithmeticalOperationsController - [sum] Response : 5
+[INFO ] 2021-12-09 09:54:42.342 [Test worker] RequestResponseLoggerFilter - Request  GET : /V1/arithmetical/sum/2/3
+[INFO ] 2021-12-09 09:54:42.413 [Test worker] ArithmeticalOperationsController - [sum] Request : number: 2, otherNumber: 3
+[INFO ] 2021-12-09 09:54:42.414 [Test worker] ArithmeticalOperationsController - [sum] Response : 5
+[INFO ] 2021-12-09 09:54:42.477 [Test worker] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:54:42.547 [Test worker] AuthenticationControllerTest - Starting AuthenticationControllerTest using Java 11.0.8 on AR0FVFCG16YL415 with PID 588 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:54:42.549 [Test worker] AuthenticationControllerTest - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:54:42.916 [Test worker] AuthenticationControllerTest - Starting AuthenticationControllerTest using Java 11.0.8 on AR0FVFCG16YL415 with PID 588 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:54:42.917 [Test worker] AuthenticationControllerTest - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:54:43.416 [Test worker] AuthenticationControllerTest - Starting AuthenticationControllerTest using Java 11.0.8 on AR0FVFCG16YL415 with PID 588 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:54:43.418 [Test worker] AuthenticationControllerTest - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:54:44.107 [Test worker] RequestLoggerControllerTest - Starting RequestLoggerControllerTest using Java 11.0.8 on AR0FVFCG16YL415 with PID 588 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:54:44.108 [Test worker] RequestLoggerControllerTest - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:54:44.739 [Test worker] RequestLoggerControllerTest - Started RequestLoggerControllerTest in 0.673 seconds (JVM running for 19.364)
+[INFO ] 2021-12-09 09:54:44.889 [Test worker] RequestResponseLoggerFilter - Request  GET : /V1/logger/history/2/1
+[INFO ] 2021-12-09 09:54:44.894 [Test worker] RequestLoggerController - [history] Response : Page 1 of 1 containing UNKNOWN instances
+[INFO ] 2021-12-09 09:54:44.916 [Test worker] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:54:45.188 [Test worker] RequestLoggerService - Finding all requests page : 1, size : 1 
+[INFO ] 2021-12-09 09:54:45.191 [Test worker] RequestLoggerService - Saved request : null 
+[INFO ] 2021-12-09 09:55:11.461 [Test worker] TenpoApiApplication - Starting TenpoApiApplication using Java 11.0.8 on AR0FVFCG16YL415 with PID 630 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:55:11.471 [Test worker] TenpoApiApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:55:23.961 [Test worker] TenpoApiApplication - Started TenpoApiApplication in 13.457 seconds (JVM running for 16.642)
+[INFO ] 2021-12-09 09:55:24.207 [Test worker] AuthenticationControllerTest - Starting AuthenticationControllerTest using Java 11.0.8 on AR0FVFCG16YL415 with PID 630 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:55:24.208 [Test worker] AuthenticationControllerTest - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:55:25.388 [Test worker] AuthenticationControllerTest - Started AuthenticationControllerTest in 1.223 seconds (JVM running for 18.069)
+[INFO ] 2021-12-09 09:55:25.485 [Test worker] RequestResponseLoggerFilter - Request  GET : /V1/authentication/logout
+[INFO ] 2021-12-09 09:55:25.550 [Test worker] AuthenticationController - [logout]
+[INFO ] 2021-12-09 09:55:25.604 [Test worker] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:55:25.648 [Test worker] AuthenticationController - [singUp] Request : UserDTO{userName='pepe', password='pepe'}
+[INFO ] 2021-12-09 09:55:25.660 [Test worker] AuthenticationController - [singUp] Response : UserDataResponse{userName='pepe'}
+[INFO ] 2021-12-09 09:55:25.766 [Test worker] RequestResponseLoggerFilter - Request  POST : /V1/authentication/sign-up
+[INFO ] 2021-12-09 09:55:25.994 [Test worker] AuthenticationController - [singUp] Request : UserDTO{userName='pepe', password='pepe'}
+[INFO ] 2021-12-09 09:55:25.995 [Test worker] AuthenticationController - [singUp] Response : null
+[INFO ] 2021-12-09 09:55:26.001 [Test worker] RequestResponseLoggerFilter - Status Response : 201
+[INFO ] 2021-12-09 09:55:26.016 [Test worker] RequestResponseLoggerFilter - Request  POST : /V1/authentication/login
+[INFO ] 2021-12-09 09:55:26.022 [Test worker] AuthenticationController - [login] Request : LoginDTO{userName='pepe', password='pepe'}
+[INFO ] 2021-12-09 09:55:26.024 [Test worker] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:55:26.065 [Test worker] ArithmeticalOperationsControllerTest - Starting ArithmeticalOperationsControllerTest using Java 11.0.8 on AR0FVFCG16YL415 with PID 630 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:55:26.066 [Test worker] ArithmeticalOperationsControllerTest - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:55:26.612 [Test worker] ArithmeticalOperationsControllerTest - Started ArithmeticalOperationsControllerTest in 0.571 seconds (JVM running for 19.293)
+[INFO ] 2021-12-09 09:55:26.642 [Test worker] ArithmeticalOperationsController - [sum] Request : number: 2, otherNumber: 3
+[INFO ] 2021-12-09 09:55:26.643 [Test worker] ArithmeticalOperationsController - [sum] Response : 5
+[INFO ] 2021-12-09 09:55:26.645 [Test worker] RequestResponseLoggerFilter - Request  GET : /V1/arithmetical/sum/2/3
+[INFO ] 2021-12-09 09:55:26.648 [Test worker] ArithmeticalOperationsController - [sum] Request : number: 2, otherNumber: 3
+[INFO ] 2021-12-09 09:55:26.649 [Test worker] ArithmeticalOperationsController - [sum] Response : 5
+[INFO ] 2021-12-09 09:55:26.666 [Test worker] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:55:26.915 [Test worker] RequestLoggerControllerTest - Starting RequestLoggerControllerTest using Java 11.0.8 on AR0FVFCG16YL415 with PID 630 (started by matiacetosel in /Users/matiacetosel/tenpo-api)
+[INFO ] 2021-12-09 09:55:26.916 [Test worker] RequestLoggerControllerTest - No active profile set, falling back to default profiles: default
+[INFO ] 2021-12-09 09:55:27.437 [Test worker] RequestLoggerControllerTest - Started RequestLoggerControllerTest in 0.542 seconds (JVM running for 20.118)
+[INFO ] 2021-12-09 09:55:27.471 [Test worker] RequestResponseLoggerFilter - Request  GET : /V1/logger/history/2/1
+[INFO ] 2021-12-09 09:55:27.474 [Test worker] RequestLoggerController - [history] Response : Page 1 of 1 containing UNKNOWN instances
+[INFO ] 2021-12-09 09:55:27.488 [Test worker] RequestResponseLoggerFilter - Status Response : 200
+[INFO ] 2021-12-09 09:55:27.701 [Test worker] RequestLoggerService - Finding all requests page : 1, size : 1 
+[INFO ] 2021-12-09 09:55:27.704 [Test worker] RequestLoggerService - Saved request : null 

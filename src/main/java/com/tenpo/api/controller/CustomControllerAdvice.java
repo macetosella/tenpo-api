@@ -1,5 +1,6 @@
 package com.tenpo.api.controller;
 
+import com.tenpo.api.exception.InvalidPasswordException;
 import com.tenpo.api.exception.InvalidTokenException;
 import com.tenpo.api.exception.InvalidUserException;
 import com.tenpo.api.dto.response.ErrorResponse;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 class CustomControllerAdvice {
 
-    @ExceptionHandler({InvalidUserException.class, InvalidTokenException.class})
+    @ExceptionHandler({InvalidUserException.class, InvalidTokenException.class, InvalidPasswordException.class})
     public ResponseEntity<ErrorResponse> handleUnauthorizedExceptions(Exception e) {
         return createResponseError(e, HttpStatus.UNAUTHORIZED);
     }

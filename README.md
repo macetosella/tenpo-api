@@ -87,7 +87,7 @@ Clonar este repositorio: https://github.com/macetosella/tenpo-api
 
 Luego ejecutar el siguiente comando, desde la raiz del projecto
 ```
-./docker-compose up
+docker-compose up
 ```
 
 Comprobar que los containers esten levantados

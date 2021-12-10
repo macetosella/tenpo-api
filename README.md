@@ -60,6 +60,15 @@
 
 ### Comentarios
 Probablemente la solución para el login/signup/logout no sea la mejor, se decidió ir por el camino de utilizar cookies/sessions, pero la mejor forma es manejar un token como jwt y usar cookies por front.
+Lo ideal para las pruebas es hacerlas a traves de `swagger` para setear las cookies de forma correcta. Si se desea hacer por postman por ejemplo o cURL tener en cuenta de enviar la cookies por header.
+El valor de la cookie esta compuesto por un token jwt el cual tiene un expiracion de 30min.
+
+Ejemplo:
+```
+curl --location --request GET 'http://localhost:8009/V1/arithmetical/sum/1/2' \
+--header 'Cookie: jwt-token=eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzkwMDI5NDM5NzQsInN1YiI6ImhvbG9hMiJ9.lj8sgMzKCVwqPctl77e39Sw9iGqabbnPTUvFhLRK9ow; 
+Path=/; Max-Age=6000; Expires=Thu, 09 Dec 2021 02:45:44 GMT; Secure; HttpOnly; JSESSIONID=3C463504F67A1FE39F736F35686F3292'
+```
 
 ### Setup
 #### Instrucciones
@@ -75,10 +84,17 @@ apt install docker-compose
 ```
 
 Clonar este repositorio: https://github.com/macetosella/tenpo-api
+
 Luego ejecutar el siguiente comando, desde la raiz del projecto
 ```
 ./docker-compose up
 ```
+
+Comprobar que los containers esten levantados
+```
+docker ps
+```
+Deberían haber dos, la api y la base de datos.
 ### API Url
 URL Local: http://localhost:8009/
 

@@ -10,7 +10,6 @@ services:
     image: acetosella90/tenpo-api:latest
     depends_on:
     - db
-    command: [""]
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/tenpoDB
       - SPRING_DATASOURCE_USERNAME=postgres

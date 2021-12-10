@@ -15,6 +15,7 @@
    - [Uso](#uso)
    - [API Url](#api)
    - [Servicios](#servicios)
+      - [Swagger](#swagger) 
       - [Signup](#ignup)
       - [Login](#login)
       - [Logout](#logut)
@@ -58,30 +59,44 @@
 4. Tu código debe estar disponible en un repositorio público, junto con las instrucciones de cómo desplegar el servicio y cómo utilizarlo.
 
 ### Comentarios
-Probablemente la solución para el login/signup/logout no sea la mejor, se decidió ir por el camino de utilizar cookies/sessions ya que no estoy del todo familiarizado con `sprint securty` y la idea es entregar una solución funcional en un corto plazo. Con lo cual queda como deuda técnica.
+Probablemente la solución para el login/signup/logout no sea la mejor, se decidió ir por el camino de utilizar cookies/sessions, pero la mejor forma es manejar un token como jwt y usar cookies por front.
 
 ### Setup
-
 #### Instrucciones
+En primer lugar hay q tener instalado `docker-compose`. Se instala de la siguiente manera:
 
-#### Uso
+Para mac
+```
+brew install docker-compose
+```
+Para linux
+```
+apt install docker-compose
+```
 
-#### API Url
+Clonar este repositorio: https://github.com/macetosella/tenpo-api
+Luego ejecutar el siguiente comando, desde la raiz del projecto
+```
+./docker-compose up
+```
+### API Url
+URL Local: http://localhost:8009/
 
 ### Servicios
-
+#### Swagger
+http://localhost:8009/swagger-ui/
 #### Signup
-
+Este endpoint se utiliza para dar de alta usuarios y es de tipo POST (ver swagger para mas información).
 #### Login
-
-#### Logout 
-
+Endpoint para login de usuario, recibe un nombre y un password, chequea que sean validos y setea un jwt por cookie .
+#### Logout
+Este endpoint se usa para el deslogeo de un usuario, lo que hace es matar la cookie, para probarlo es necesario hacerlo desde un navegador.
 #### Sum
-
+Este recurso recibe dos parametros enteros y devuelve la suma, previamente chequeando que reciba por cookie un jwt valido.
 #### History
+Endpoint que muestra el historial de todas las api calls de la api, paginadas. Recibe la pagina y el tamaño de las mismas.
 
 ### Test
-
 #### Unitarios
 
 Para la ejecucion de los test unitarios utilice jUnit.

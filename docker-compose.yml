@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  run:
+    ports:
+      - '8009:8080'
+    expose:
+      - '8009'
+    container_name: tenpo-api
+    image: acetosella90/tenpo-api:latest
+    depends_on:
+    - db
+    command: [""]
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/tenpoDB
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+    ports:
+      - '8090:5432'
+    expose:
+      - '8090'
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

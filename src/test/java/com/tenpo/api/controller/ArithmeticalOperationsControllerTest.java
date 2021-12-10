@@ -60,12 +60,4 @@ class ArithmeticalOperationsControllerTest {
             .queryParam(Integer.toString(number), Integer.toString(otherNumber))
             .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
     }
-
-    @Test
-    void prueba() {
-        String user = Hashing.sha512().hashString("PEPE").toString();
-        String user2 = Hashing.sha512().hashString("PEPE").toString();
-        assertEquals(user, user2);
-    }
-
 }
